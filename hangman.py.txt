@@ -1,3 +1,4 @@
+### for ascii art go the ascii_art file
 import random,ASCII_ART
 print(ASCII_ART.welcome)   
 word_list = [
