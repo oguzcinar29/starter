@@ -1,0 +1,139 @@
+import random,ASCII_ART
+print(ASCII_ART.welcome)   
+word_list = [
+'abruptly', 
+'absurd', 
+'abyss', 
+'affix', 
+'askew', 
+'avenue', 
+'awkward', 
+'axiom', 
+'azure', 
+'bagpipes', 
+'bandwagon', 
+'banjo', 
+'bayou', 
+'beekeeper', 
+'bikini', 
+'blitz', 
+'blizzard', 
+'boggle', 
+'bookworm', 
+'boxcar', 
+'boxful', 
+'buckaroo', 
+'buffalo', 
+'buffoon', 
+'buxom', 
+'buzzard', 
+'buzzing', 
+'buzzwords', 
+'caliph', 
+'cobweb', 
+'cockiness', 
+'croquet', 
+'crypt', 
+'curacao', 
+'cycle', 
+'daiquiri', 
+'dirndl', 
+'disavow', 
+'dizzying', 
+'duplex', 
+'dwarves', 
+'embezzle', 
+'equip', 
+'espionage', 
+'euouae', 
+'exodus', 
+'faking', 
+'fishhook', 
+'fixable', 
+'fjord', 
+'flapjack', 
+'flopping', 
+'fluffiness', 
+'flyby', 
+'foxglove', 
+'frazzled', 
+'frizzled', 
+'fuchsia', 
+'funny', 
+'gabby', 
+'galaxy', 
+'galvanize', 
+'gazebo', 
+'giaour', 
+'gizmo', 
+'glowworm', 
+'glyph', 
+'gnarly', 
+'gnostic', 
+'gossip', 
+'grogginess', 
+'haiku', 
+'haphazard', 
+'hyphen', 
+'iatrogenic', 
+'icebox', 
+'injury', 
+'ivory', 
+'ivy', 
+'jackpot', 
+'jaundice', 
+'jawbreaker', 
+'jaywalk', 
+'jazziest']
+
+#choise random number for which one pick in list
+choise=random.randint(0,len(word_list)-1)
+
+print(choise)
+
+correct_list=[]
+
+for i in word_list[choise]:
+    correct_list+=i
+
+
+#break for while loop
+ctr=0
+hang_len=len(ASCII_ART.HANGMANPICS)
+
+#build new list for design
+lst=[]
+for i in word_list[choise]:
+    lst.append('_')
+
+str1=word_list[choise]
+
+a=1
+flag=True
+while flag==True:
+    guess=input("give me")
+    if str1.find(guess)!=-1:
+        for i in range(0,len(str1)):
+            if guess==str1[i]:
+                lst[i]=guess
+    else:
+        print(ASCII_ART.HANGMANPICS[a])
+        a+=1
+        ctr+=1
+        if a==len(ASCII_ART.HANGMANPICS):
+            flag=False
+            print("You lose")
+    if correct_list==lst:
+        print("you win")
+        flag=False
+    print(lst)
+    
+    
+    
+    
+    
+
+
+
+
+
